@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your FitBuddy Plan</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body class="plain-bg">
+  <div class="container">
+    <h1>Your Fitness Plan</h1>
+
+    <section class="info-box">
+      <h2>User Information</h2>
+      <table class="info-table">
+        <tr><th>Name</th><td>{{ username }}</td></tr>
+        <tr><th>User ID</th><td>{{ user_id }}</td></tr>
+        <tr><th>Age</th><td>{{ age }}</td></tr>
+        <tr><th>Weight</th><td>{{ weight }} kg</td></tr>
+        <tr><th>Goal</th><td>{{ goal }}</td></tr>
+        <tr><th>Intensity</th><td>{{ intensity }}</td></tr>
+      </table>
+    </section>
+
+    <section class="plan-box">
+      <h2>7-Day Workout Plan</h2>
+      <pre>{{ workout_plan }}</pre>
+    </section>
+
+    {% if nutrition_tip %}
+    <section class="tip-box">
+      <h2>Nutrition / Recovery Tip</h2>
+      <p>{{ nutrition_tip }}</p>
+    </section>
+    {% endif %}
+
+    {% if updated_plan %}
+    <section class="plan-box updated">
+      <h2>Updated Plan (based on your feedback)</h2>
+      <pre>{{ updated_plan }}</pre>
+    </section>
+    {% endif %}
+
+    {% if feedback_confirmation %}
+    <div class="confirmation">{{ feedback_confirmation }}</div>
+    {% endif %}
+
+    <section class="feedback-box">
+      <h2>Refine Your Plan</h2>
+      <form action="/submit-feedback" method="post">
+        <label for="user_id_fb">User ID</label>
+        <input type="text" id="user_id_fb" name="user_id" value="{{ user_id }}" required />
+
+        <label for="feedback">Feedback</label>
+        <textarea id="feedback" name="feedback" rows="3"
+          placeholder="e.g. more focus on cardio, include more rest days" required></textarea>
+
+        <button type="submit">Update Plan</button>
+      </form>
+    </section>
+
+    <p class="nav-links">
+      <a href="/">&larr; Generate another plan</a> |
+      <a href="/view-all-users">View all users (admin)</a>
+    </p>
+  </div>
+</body>
+</html>

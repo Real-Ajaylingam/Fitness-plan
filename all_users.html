@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FitBuddy - All Users</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body class="plain-bg">
+  <div class="container wide">
+    <h1>Admin Dashboard - All Users</h1>
+
+    {% if rows|length == 0 %}
+      <p>No users registered yet.</p>
+    {% else %}
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>Username</th>
+            <th>User ID</th>
+            <th>Age</th>
+            <th>Weight (kg)</th>
+            <th>Goal</th>
+            <th>Intensity</th>
+            <th>Original Plan</th>
+            <th>Updated Plan</th>
+            <th>Nutrition Tip</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in rows %}
+          <tr>
+            <td>{{ row.user.username }}</td>
+            <td>{{ row.user.user_id }}</td>
+            <td>{{ row.user.age }}</td>
+            <td>{{ row.user.weight }}</td>
+            <td>{{ row.user.goal }}</td>
+            <td>{{ row.user.intensity }}</td>
+            <td><pre class="cell-pre">{{ row.original_plan or "-" }}</pre></td>
+            <td><pre class="cell-pre">{{ row.updated_plan or "-" }}</pre></td>
+            <td>{{ row.nutrition_tip or "-" }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% endif %}
+
+    <p class="nav-links"><a href="/">&larr; Back to home</a></p>
+  </div>
+</body>
+</html>

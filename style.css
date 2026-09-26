@@ -1,0 +1,209 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: #1a1a1a;
+}
+
+/* Home page: dark gym-themed hero look */
+.hero-bg {
+  background: linear-gradient(rgba(10, 10, 10, 0.75), rgba(10, 10, 10, 0.85)),
+    radial-gradient(circle at top, #2b2b2b, #0d0d0d);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.overlay {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.97);
+  border-radius: 16px;
+  padding: 36px 40px;
+  max-width: 420px;
+  width: 100%;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.card h1 {
+  margin: 0 0 4px;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ff5722;
+  text-align: center;
+}
+
+.subtitle {
+  text-align: center;
+  color: #555;
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+label {
+  display: block;
+  margin: 14px 0 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+button {
+  margin-top: 22px;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #ff5722;
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background: #e64a19;
+}
+
+.admin-link {
+  text-align: center;
+  margin-top: 18px;
+  font-size: 0.85rem;
+}
+
+.admin-link a {
+  color: #777;
+  text-decoration: none;
+}
+
+/* Result / admin pages: light, readable layout */
+.plain-bg {
+  background: #f4f5f7;
+  padding: 32px 16px;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 14px;
+  padding: 32px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+}
+
+.container.wide {
+  max-width: 1100px;
+}
+
+h1 {
+  color: #ff5722;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: #333;
+  border-left: 4px solid #ff5722;
+  padding-left: 10px;
+}
+
+section {
+  margin-bottom: 26px;
+}
+
+.info-table td, .info-table th {
+  text-align: left;
+  padding: 6px 12px 6px 0;
+  font-size: 0.95rem;
+}
+
+pre {
+  background: #1e1e1e;
+  color: #e6e6e6;
+  padding: 16px;
+  border-radius: 10px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.tip-box p {
+  background: #fff3e0;
+  border-left: 4px solid #ff9800;
+  padding: 12px 16px;
+  border-radius: 8px;
+}
+
+.plan-box.updated pre {
+  background: #10331d;
+}
+
+.confirmation {
+  background: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #a5d6a7;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  margin-bottom: 22px;
+}
+
+.feedback-box textarea {
+  resize: vertical;
+}
+
+.nav-links {
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.nav-links a {
+  color: #ff5722;
+  text-decoration: none;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.admin-table th, .admin-table td {
+  border: 1px solid #e0e0e0;
+  padding: 10px;
+  vertical-align: top;
+  text-align: left;
+}
+
+.admin-table th {
+  background: #fafafa;
+}
+
+.cell-pre {
+  background: #f7f7f7;
+  color: #222;
+  max-width: 260px;
+  max-height: 220px;
+  overflow: auto;
+  font-size: 0.78rem;
+  padding: 8px;
+}
